@@ -9,7 +9,12 @@ app.use((req,res,next)=> {
     console.log("Req method: ", req.method, " req url: ", req.originalUrl)
     next()
 })
-
+app.use((req, res, next) => {
+    if (req.originalUrl === '/favicon.ico') {
+      return res.status(204).end(); // No Content
+    }
+    next();
+  });
 
 let poems = [
     {
