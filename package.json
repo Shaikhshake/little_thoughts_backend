@@ -1,0 +1,19 @@
+{
+  "name": "little_thoughts_backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "build:ui":"rm -rf dist && cd ../little-thoughts-frontend npm run build && cp -r dist ../little_thoughts_backend && cd ../little_thoughts_backend",
+    "deploy:full": "git add . && git commit -m \"Deploying new frontend\" && git push -u origin main",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
